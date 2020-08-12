@@ -27,12 +27,10 @@ body {
 }
 
 .quote-text {
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 500;
     text-align: center;
 }
-
-.long-quote { font-size: 2rem; }
 
 .fa-quote-left {
     font-size: 2.5rem;
