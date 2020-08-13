@@ -14,7 +14,7 @@ function showLoadingSpinner() {
 }
 
 // Remove Loading
-function completeLoadingSpinner() {
+function removeLoadingSpinner() {
     if (!loader.hidden) {
         quoteContainer.hidden = false;
         loader.hidden = true;
@@ -24,6 +24,7 @@ function completeLoadingSpinner() {
 // Get Code from API
 async function getQuote() {
     showLoadingSpinner();
+    
     const proxyURL = 'https://cors-anywhere.herokuapp.com/';
     const apiURL = 'http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json';
 
@@ -35,11 +36,10 @@ async function getQuote() {
         quoteText.innerText = data.quoteText;
 
         // Stop loader and show Quote
-        completeLoadingSpinner();
-        
+        removeLoadingSpinner();
+
     } catch (error) {
         getQuote();
-        console.log('LOL, no quote', error)
     }
 }
 
